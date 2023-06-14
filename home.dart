@@ -28,8 +28,9 @@ class _HomeState extends State<Home> {
       ),
     );
     if (result.isNotEmpty || result != null) {
+      
       setState(() {
-        selectedAssetList = result;
+        selectedAssetList.addAll(result);
       });
     }
   }
