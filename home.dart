@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
         },
       ),
     );
-    if (result.isNotEmpty || result != null) {
+    if (result?.isNotEmpty ?? false) {
       
       setState(() {
         selectedAssetList.addAll(result);
