@@ -6,7 +6,8 @@ import 'package:tutorial_flutter/media_services.dart';
 class MediaPicker extends StatefulWidget {
   final int maxCount;
   final RequestType requestType;
-  const MediaPicker(this.maxCount, this.requestType, {super.key});
+  final  List<AssetEntity> selectedAssetList;
+  const MediaPicker(this.maxCount, this.requestType, this.selectedAssetList,{super.key});
 
   @override
   State<MediaPicker> createState() => _MediaPickerState();
@@ -20,6 +21,9 @@ class _MediaPickerState extends State<MediaPicker> {
 
   @override
   void initState() {
+     setState(() {
+              selectedAssetList = widget.selectedAssetList;
+            });
     MediaServices().loadAlbums(widget.requestType).then(
       (value) {
         setState(() {
