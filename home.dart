@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return MediaPicker(maxCount, requestType);
+          return MediaPicker(maxCount, requestType, selectedAssetList);
         },
       ),
     );
